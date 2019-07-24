@@ -1,22 +1,32 @@
+.jumbotron {
+
+    background-color: #ffbb99;
+
+}
+
 .mtchlblwrapper {
 
     display: grid;
-    grid-template-columns: 130px 130px 130px;
-    grid-template-rows: 30px;
+    grid-template-columns: 115px 100px 100px;
+    grid-template-rows: auto;
     margin-bottom: 10px;
     background-color: orange;
     width: 125px;
-    column-gap: 75px; 
+    column-gap: 60px; 
+    margin-top: 70px;
  }
 
 .mtchscrewrapper {
 
     display: grid;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 95px 95px 95px;
     grid-template-rows: 75px;
     color: white;
-    column-gap: 150px;
-    margin-bottom: 10px;
+    column-gap: 75px;
+    margin-bottom: 40px;
+    font-size: 25px;
+    justify-self: center;
+    width: 200px;
     
      
 }
@@ -26,6 +36,12 @@
 #totlossScore  {
 
     background-color: green;
+    width:125px; 
+}
+
+#MatchLabel {
+
+    background-color: orange;
     width:125px; 
 }
 
@@ -45,7 +61,7 @@
 
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
-    grid-auto-rows: 200px;
+    margin-top: 30px;
  
 }
 
@@ -61,13 +77,15 @@
 
 .TotalScoreLabel {
 
-    display: grid;
+    
     grid-template-columns: 150px;
     grid-template-rows: 50px;
     background-color: orange;
     color: white;
     margin-bottom: 10px;
+    margin-top: 70px;
     width: 150px;
+    
     
  
 }
@@ -75,12 +93,15 @@
 
 .totscrewrapper {
 
-    display: grid;
+    
     background-color: green;
     grid-template-columns: 130px;
-    grid-template-rows: 100px;
+    
     color: white;
     width: 150px;
+    grid-template-rows: 75px;
+    font-size: 25px;
+    
      
 }
 
