@@ -1,17 +1,16 @@
 .jumbotron {
 
-    background-color: #ff99cc;
-    
+    background-color: #ffbb99;
+
 }
 
 .mtchlblwrapper {
 
     display: grid;
-    grid-template-columns: 95px 95px 95px;
-    grid-template-rows: 55px;
+    grid-template-columns: 115px 100px 100px;
+    grid-template-rows: auto;
     margin-bottom: 10px;
     background-color: orange;
-    color: white;
     width: 125px;
     column-gap: 60px; 
     margin-top: 70px;
@@ -23,11 +22,11 @@
     grid-template-columns: 95px 95px 95px;
     grid-template-rows: 55px;
     color: white;
-    column-gap: 60px;
+    column-gap: 75px;
     margin-bottom: 40px;
     font-size: 25px;
+    justify-self: center;
     width: 200px;
-    
     
      
 }

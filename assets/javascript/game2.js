@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     let totalWins = 0;
     let totalLosses = 0;
-    
+    let currentMatchScore = 0;
 
 
     function genRandNbr (minnbr,maxnbr) {
@@ -89,11 +89,7 @@ $(document).ready(function () {
     function greenclick () {
 
         let newTotalScore = 0;
-        let currentMatchScore = 0;
-
-        
-        let currentMatchScore_ptr = document.querySelector('#matchScore');
-
+    
         let currentTotalScore = document.querySelector('#totalScore');
 
         let randNumber = genRandNbr (1,12);
@@ -104,13 +100,9 @@ $(document).ready(function () {
 
         newTotalScore = Number(currentTotalScore.textContent) + Number(randNumber);
 
-        currentMatchScore = Number(currentMatchScore_ptr.textContent);
-
         currentTotalScore.textContent = Number(currentTotalScore.textContent) + Number(randNumber);
 
         if (newTotalScore > currentMatchScore) {
-
-            console.log ("I got inside gt");
 
             setTotalLosses ();
 
@@ -121,9 +113,7 @@ $(document).ready(function () {
             alert("You Lost the Game");
             
 
-        } else if (newTotalScore = currentMatchScore) {
-
-            console.log ("I got inside eq");
+        } else if (newTotalScore > currentMatchScore) {
 
             setTotalWins ();
 

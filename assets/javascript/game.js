@@ -3,6 +3,10 @@ $(document).ready(function () {
     let totalWins = 0;
     let totalLosses = 0;
     let currentMatchScore = 0;
+    let greenstnval = 0;
+    let pinkstnval = 0;
+    let yellowtnval = 0;
+    let purplestnval = 0;
 
 
     function genRandNbr (minnbr,maxnbr) {
@@ -76,14 +80,23 @@ $(document).ready(function () {
         
         //Obtain the currently displayed totalLosses value displayed on screen
 
-        lv_totalWins_ptr = document.querySelector('#totwinScore');
+        lv_totalWins_ptr = document.querySelector('#totwinScore');       //returns a nonnumeric pointer
 
-        lv_totalWins_ptr = Number(lv_totalWins_ptr.textContent);
+        lv_totalWins = Number(lv_totalWins_ptr.textContent);
 
         lv_totalWins += lv_totalWins + 1;
 
         lv_totalWins_ptr.textContent = lv_totalWins;
         
+    }
+
+    function setStoneVals () {
+
+        greenstnval = genRandNbr (1,12);
+        pinkstnval = genRandNbr (1,12);
+        yellowstnval = genRandNbr (1,12);
+        purplestnval = genRandNbr (1,12);
+            
     }
 
     function greenclick () {
@@ -92,15 +105,14 @@ $(document).ready(function () {
     
         let currentTotalScore = document.querySelector('#totalScore');
 
-        let randNumber = genRandNbr (1,12);
-    
+            
         //console.log("Current GreenStone Value is: " + randNumber);
             
         //console.log("Current TotalScore = " + Number(currentTotalScore.textContent));
 
-        newTotalScore = Number(currentTotalScore.textContent) + Number(randNumber);
+        newTotalScore = Number(currentTotalScore.textContent) + greenstnval;
 
-        currentTotalScore.textContent = Number(currentTotalScore.textContent) + Number(randNumber);
+        currentTotalScore.textContent = Number(currentTotalScore.textContent) + greenstnval;
 
         if (newTotalScore > currentMatchScore) {
 
@@ -113,7 +125,7 @@ $(document).ready(function () {
             alert("You Lost the Game");
             
 
-        } else if (newTotalScore > currentMatchScore) {
+        } else if (newTotalScore === currentMatchScore) {
 
             setTotalWins ();
 
@@ -135,15 +147,14 @@ $(document).ready(function () {
     
         let currentTotalScore = document.querySelector('#totalScore');
 
-        let randNumber = genRandNbr (1,12);
-    
+            
         //console.log("Current GreenStone Value is: " + randNumber);
             
         //console.log("Current TotalScore = " + Number(currentTotalScore.textContent));
 
-        newTotalScore = Number(currentTotalScore.textContent) + Number(randNumber);
+        newTotalScore = Number(currentTotalScore.textContent) + pinkstnval;
 
-        currentTotalScore.textContent = Number(currentTotalScore.textContent) + Number(randNumber);
+        currentTotalScore.textContent = Number(currentTotalScore.textContent) + pinkstnval;
 
         if (newTotalScore > currentMatchScore) {
 
@@ -154,8 +165,9 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Lost the Game");
+            
 
-        } else if (newTotalScore > currentMatchScore) {
+        } else if (newTotalScore === currentMatchScore) {
 
             setTotalWins ();
 
@@ -164,6 +176,7 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Won the Game");
+            
 
         }
         
@@ -176,15 +189,14 @@ $(document).ready(function () {
     
         let currentTotalScore = document.querySelector('#totalScore');
 
-        let randNumber = genRandNbr (1,12);
-    
+            
         //console.log("Current GreenStone Value is: " + randNumber);
             
         //console.log("Current TotalScore = " + Number(currentTotalScore.textContent));
 
-        newTotalScore = Number(currentTotalScore.textContent) + Number(randNumber);
+        newTotalScore = Number(currentTotalScore.textContent) + yellowstnval;
 
-        currentTotalScore.textContent = Number(currentTotalScore.textContent) + Number(randNumber);
+        currentTotalScore.textContent = Number(currentTotalScore.textContent) + yellowstnval;
 
         if (newTotalScore > currentMatchScore) {
 
@@ -195,8 +207,9 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Lost the Game");
+            
 
-        } else if (newTotalScore > currentMatchScore) {
+        } else if (newTotalScore === currentMatchScore) {
 
             setTotalWins ();
 
@@ -205,6 +218,7 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Won the Game");
+            
 
         }
         
@@ -217,15 +231,14 @@ $(document).ready(function () {
     
         let currentTotalScore = document.querySelector('#totalScore');
 
-        let randNumber = genRandNbr (1,12);
-    
+            
         //console.log("Current GreenStone Value is: " + randNumber);
             
         //console.log("Current TotalScore = " + Number(currentTotalScore.textContent));
 
-        newTotalScore = Number(currentTotalScore.textContent) + Number(randNumber);
+        newTotalScore = Number(currentTotalScore.textContent) + purplestnval;
 
-        currentTotalScore.textContent = Number(currentTotalScore.textContent) + Number(randNumber);
+        currentTotalScore.textContent = Number(currentTotalScore.textContent) + purplestnval;
 
         if (newTotalScore > currentMatchScore) {
 
@@ -236,8 +249,9 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Lost the Game");
+            
 
-        } else if (newTotalScore > currentMatchScore) {
+        } else if (newTotalScore === currentMatchScore) {
 
             setTotalWins ();
 
@@ -246,6 +260,7 @@ $(document).ready(function () {
             setMatchScore ();
 
             alert("You Won the Game");
+            
 
         }
         
@@ -255,7 +270,9 @@ $(document).ready(function () {
     
     //Main Section
     
-    setMatchScore();  //Call the setMatchScore function
+    setMatchScore();                                //Call the setMatchScore function
+
+    setStoneVals();                                //Sets the values of each stone
     
     $("#greenStone").on("click", greenclick);
 
